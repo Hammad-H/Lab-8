@@ -32,15 +32,13 @@ void Person::setLastName(std::string lname){}
 
 struct tm Person::getDateOfBirth()
 {
-	struct tm dateOfBirth
-	{
-		dateOfBirth.tm_mday = dobDay;
-		dateOfBirth.tm_mon = dobMonth;
-		dateOfBirth.tm_year = dobYear;	
-	};
+	struct tm dateOfBirth;
+	dateOfBirth.tm_mday = dobDay;
+	dateOfBirth.tm_mon = dobMonth;
+	dateOfBirth.tm_year = dobYear;	
 
 	return dateOfBirth;
 }
 
-void Person::setDateOfBirth(){}
+
 #endif
