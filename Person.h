@@ -7,7 +7,16 @@
 class Person
 {
     protected:
-        // instance variables here...
+        int urId;
+        std::string netId;
+        std::string firstName;
+        std::string lastName;
+        int dobDay;
+        int dobMonth;
+        int dobYear;
+        std::string email;
+        std::string address;
+        long phone;
 
     public:
         Person();
