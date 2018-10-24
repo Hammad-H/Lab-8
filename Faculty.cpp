@@ -46,7 +46,7 @@ struct tm Faculty::getStartDate()
 	return retVal;
 }
 
-School Faculty::getStartDate()
+School Faculty::getSchool()
 {
 	return Faculty::UNDEFINED;
 }

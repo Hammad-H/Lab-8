@@ -26,7 +26,6 @@ int main()
     std::cout << "Last Name:	" << p.getLastName() << "[Expected: Luxury]" << std::endl;
 */
 
-    
 
 
 
