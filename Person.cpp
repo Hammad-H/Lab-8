@@ -40,5 +40,28 @@ struct tm Person::getDateOfBirth()
 	return dateOfBirth;
 }
 
+void Person::setDateOfBirth(int day, int month, int year)
+{
+	dobDay = 0;
+	dobMonth = 0;
+	dobYear = 0;
+}
+
+std::string Person::getAddress(){}
+
+void Person::setAddress(std::string adr) {}
+
+std::string  Person::getNetID(){}
+
+int Person::getURID(){}
+
+std::string  Person::getEmail(){}
+
+long Person::getPhone(){}
+
+void Person::setNetID(std::string netid){}
+void Person::setURID(int urid){}
+void Person::setEmail(std::string email){}
+void Person::setPhone(long number){}
 
 #endif
