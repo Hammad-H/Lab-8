@@ -7,16 +7,16 @@
 class Person
 {
     protected:
-        int urId;
-        std::string netId;
-        std::string firstName;
-        std::string lastName;
-        int dobDay;
-        int dobMonth;
-        int dobYear;
-        std::string email;
-        std::string address;
-        long phone;
+        int my_urId;
+        std::string my_netId;
+        std::string my_firstName;
+        std::string my_lastName;
+        int my_dobDay;
+        int my_dobMonth;
+        int my_dobYear;
+        std::string my_email;
+        std::string my_address;
+        long my_phone;
 
     public:
         Person();
