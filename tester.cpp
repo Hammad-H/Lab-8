@@ -83,7 +83,7 @@ int main()
               << "\nFirst Name: " << p2.getFirstName() << "[Expected: Ana]"
               << "\nDay: " << p2.getDateOfBirth().tm_mday << "[Expected: 13]"
               << "\nMonth: " << p2.getDateOfBirth().tm_mon << "[Expected: 05]"
-              << "\nYear: " << p2.getDateOfBirth().tm_mday << "[Expected: 1976]"
+              << "\nYear: " << p2.getDateOfBirth().tm_year << "[Expected: 1976]"
               << "\nEmail: " << p2.getEmail() << "[Expected: Ana.Esseker@mirrors.com]"
               << "\nAddress: " << p2.getAddress() << "[Expected: Number 12 Grimmauld Place London]"
               << "\nPhone: " << p2.getPhone() << "[Expected 6667652321]"
@@ -101,11 +101,129 @@ int main()
               << "\nFirst Name: " << p4.getFirstName() << "[Expected: Ana]"
               << "\nDay: " << p4.getDateOfBirth().tm_mday << "[Expected: 13]"
               << "\nMonth: " << p4.getDateOfBirth().tm_mon << "[Expected: 05]"
-              << "\nYear: " << p4.getDateOfBirth().tm_mday << "[Expected: 1976]"
+              << "\nYear: " << p4.getDateOfBirth().tm_year << "[Expected: 1976]"
               << "\nEmail: " << p4.getEmail() << "[Expected: Ana.Esseker@mirrors.com]"
               << "\nAddress: " << p4.getAddress() << "[Expected: Number 12 Grimmauld Place London]"
               << "\nPhone: " << p4.getPhone() << "[Expected 6667652321]"
               << std::endl;
 
+    std::cout << std::endl;
+    std::cout << "---------------" << std::endl;
+    std::cout << "Testing Faculty:" << std::endl;
+    std::cout << "---------------" << std::endl;
+
+    std::cout << "Testing getters and setters" << std::endl;
+
+    std::cout << "Faculty f1;" << std::endl;
+    Faculty f1;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "f1.addCourse(\"Whales 101\")" << std::endl;
+    f1.addCourse("Whales 101");
+    std::cout << "f1.addCourse(\"Biology 100\")" << std::endl;
+    f1.addCourse("Biology 100");
+    std::cout << "f1.setCourses(f1.getCourses())" << std::endl;
+    f1.setCourses(f1.getCourses());
+    std::cout << "Courses: ";
+    f1.printCourses();
+    std::cout << "[Expected: Whales 101 Biology 100]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "f1.removeCourse(\"Biology 100\")" << std::endl;
+    f1.removeCourse("Biology 100");
+    std::cout << "Courses: ";
+    f1.printCourses();
+    std::cout << "[Expected: Whales 101]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "f1.clearCourses()" << std::endl;
+    f1.clearCourses();
+    std::cout << "Courses: ";
+    f1.printCourses();
+    std::cout << " [Expected: ]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "f1.setResearchSpecialty(\"Marine Biology\")" << std::endl;
+    f1.setResearchSpecialty("Marine Biology");
+    std::cout << "Research Specialty: " << f1.getResearchSpecialty() << " [Expected: Marine Biology]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "f1.setStartDate(5, 7, 89)" << std::endl;
+    f1.setStartDate(5, 7, 89);
+    std::cout << "Start Date: " << f1.getStartDate().tm_mon << "/" << f1.getStartDate().tm_mday
+    << "/" << f1.getStartDate().tm_year << " [Expected: 7/5/89]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "f1.setSchool(Faculty::AS)" << std::endl;
+    f1.setSchool(Faculty::AS);
+    std::cout << "School: " << f1.getSchool() << " [Expected: 0 (AS)]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "f1.setFullTimeStatus(true)" << std::endl;
+    f1.setFullTimeStatus(true);
+    std::cout << "Full Time: " << f1.isFullTime() << " [Expected: 1 (True)]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "f1.setRank(Faculty::FULL)" << std::endl;
+    f1.setRank(Faculty::FULL);
+    std::cout << "Rank: " << f1.getRank() << " [Expected: 0 (FULL)}]" << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Faculty f2;" << std::endl;
+    std::cout << "Using the other constructor: " << 
+                 "Faculty f2(01010, \"gc9gc\", \"Costanza\", \"George\", 20," << 
+                 "4, 53, \"george.costanza@richmond.edu\", " << 
+                 "\"N1344 Queens Blvd., Queens, New York\", 9018555555, " <<
+                 "5, 7, 89, School::AS, Faculty::Associate, true, \"Architecture\")"
+              << std::endl;
+    Faculty f2(01010, "gc9gc", "Costanza", "George", 20, 3, 53,
+                "george.costanza@richmond.edu",
+                "N1344 Queens Blvd., Flushing, Queens, New York", 9018555555,
+                5, 7, 89, Faculty::AS, Faculty::ASSOCIATE, true, "Architecture");
+
+    //PASSED
+    std::cout 
+              << "\nStart Day: " << f2.getStartDate().tm_mday << " [Expected: 5]"
+              << "\nStart Month: " << f2.getStartDate().tm_mon << " [Expected: 7]"
+              << "\nStart Year: " << f2.getStartDate().tm_year << " [Expected: 89]"
+              << "\nSchool: " << f2.getSchool() << " [Expected: 0 (AS)]"
+              << "\nRank: " << f2.getRank() << " [Expected: 1 (Associate)]"
+              << "\nFull Time: " << f2.isFullTime() << " [Expected: 1 (True)]"
+              << "\nResearch Specialty: " << f2.getResearchSpecialty() << " [Expected: Architecture]"
+              << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Testing the copy constructor" << std::endl;
+    std::cout << "Faculty f3(f2)" << std::endl;
+    Faculty f3(f2);
+    
+    //PASSED          
+    std::cout
+              << "\nStart Day: " << f3.getStartDate().tm_mday << " [Expected: 5]"
+              << "\nStart Month: " << f3.getStartDate().tm_mon << " [Expected: 7]"
+              << "\nStart Year: " << f3.getStartDate().tm_year << " [Expected: 89]"
+              << "\nSchool: " << f3.getSchool() << " [Expected: 0 (AS)]"
+              << "\nRank: " << f3.getRank() << " [Expected: 1 (Associate)]"
+              << "\nFull Time: " << f3.isFullTime() << " [Expected: 1 (True)]"
+              << "\nResearch Specialty: " << f3.getResearchSpecialty() << " [Expected: Architecture]"
+              << std::endl;
 
 }

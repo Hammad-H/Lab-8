@@ -15,6 +15,25 @@ class Faculty : public Person
     protected:
         // instance variables here...
         
+        int my_urId;
+        std::string my_netId;
+        std::string my_lastName;
+        std::string my_firstName; 
+        int my_dobDay;
+        int my_dobMonth;
+        int my_dobYear; 
+        std::string my_email;
+        std::string my_address;
+        long my_phone;
+        int my_startday;
+        int my_startmo;
+        int my_startyr;
+        School my_school;
+        Rank my_rank;
+        bool my_time;
+        std::string my_specialty;
+        std::list<std::string> my_courses;
+        
     public:
         Faculty();                      // explicitly call Person() on implementation
         Faculty(const Faculty& other);  // call Person(other) on implementation
@@ -32,7 +51,7 @@ class Faculty : public Person
         void                   printCourses();
         void                   setCourses(std::list<std::string> courses);
         void                   clearCourses();
-        void                   setResearchSpecialty();
+        void                   setResearchSpecialty(std::string specialty);
 
         struct tm              getStartDate();
         School                 getSchool();
