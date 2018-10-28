@@ -12,7 +12,16 @@ class Student : public Person
         enum School {AS, JSLS, LAW, RSB, SPCS, UNDEFINED};
 
     protected:
-        // instance variables here...
+
+        int my_admitday;
+        int my_admitmo;
+        int my_admityr;
+        School my_school;
+        double my_GPA;
+        bool my_time;
+        double my_units;
+        std::list<std::string> my_courses;
+       
         
     public:
         Student();                      // explicitly call Person() on implementation
@@ -21,7 +30,7 @@ class Student : public Person
                int dob_day, int dob_mo, int dob_yr, 
                std::string email, std::string address, long phone,
                int day_admit, int month_admit, int year_admit,
-               School school, bool is_full_time, 
+               School school, double gpa, bool is_full_time, 
                double units_completed);
         ~Student();
 

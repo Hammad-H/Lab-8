@@ -226,4 +226,122 @@ int main()
               << "\nResearch Specialty: " << f3.getResearchSpecialty() << " [Expected: Architecture]"
               << std::endl;
 
+    std::cout << "---------------" << std::endl;
+    std::cout << "Testing Student:" << std::endl;
+    std::cout << "---------------" << std::endl;
+
+    std::cout << "Testing getters and setters" << std::endl;
+
+    std::cout << "Student s1;" << std::endl;
+    Student s1;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "s1.addCourse(\"Phil 101\")" << std::endl;
+    s1.addCourse("Phil 101");
+    std::cout << "s1.addCourse(\"FYS100\")" << std::endl;
+    s1.addCourse("FYS100");
+    std::cout << "s1.setCourses(s1.getCourses())" << std::endl;
+    s1.setCourses(s1.getCourses());
+    std::cout << "Courses: ";
+    s1.printCourses();
+    std::cout << "[Expected: Phil 101 FYS100]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "s1.removeCourse(\"FYS100\")" << std::endl;
+    s1.removeCourse("FYS100");
+    std::cout << "Courses: ";
+    s1.printCourses();
+    std::cout << "[Expected: Phil 101]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "s1.clearCourses()" << std::endl;
+    s1.clearCourses();
+    std::cout << "Courses: ";
+    s1.printCourses();
+    std::cout << " [Expected: ]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "s1.setAdmitDate(20, 8, 17)" << std::endl;
+    s1.setAdmitDate(20, 8, 17);
+    std::cout << "Start Date: " << s1.getAdmitDate().tm_mon << "/" << s1.getAdmitDate().tm_mday
+    << "/" << s1.getAdmitDate().tm_year << " [Expected: 8/20/17]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "s1.setSchool(Student::AS)" << std::endl;
+    s1.setSchool(Student::AS);
+    std::cout << "School: " << s1.getSchool() << " [Expected: 0 (AS)]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "s1.setGPA(3.04)" << std::endl;
+    s1.setGPA(3.04);
+    std::cout << "Student GPA: " << s1.getGPA() << "[Expected: 3.04]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "s1.setUnitsCompleted(16.5)" << std::endl;
+    s1.setUnitsCompleted(16.5);
+    std::cout << "Student Units Completed: " << s1.getUnitsCompleted() << "[Expected: 16.5]" << std::endl;
+
+    std::cout << std::endl;
+
+    //PASSED
+    std::cout << "s1.setFullTimeStatus(true)" << std::endl;
+    s1.setFullTimeStatus(true);
+    std::cout << "Full Time: " << s1.isFullTime() << " [Expected: 1 (True)]" << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Student s2;" << std::endl;
+    std::cout << "Using the other constructor: " << 
+                 "Student s2(12324533, \"ak6tq\", \"Kennedy\", \"Alex\", 10," << 
+                 "3, 97, \"alex.kennedy@richmond.edu\", " << 
+                 "\"126 West Street, Bristow, Virginia\", 5713595656, " <<
+                 "20, 8, 16, Student::AS, 3.06, true, 12.5)"
+              << std::endl;
+    Student s2(12324533, "ak6tq", "Kennedy", "Alex", 10, 3, 97,
+                "alex.kennedy@richmond.edu",
+                "126 West Street, Bristow, Virginia", 5713595656,
+                20, 8, 16, Student::AS, 3.06, true, 12.5);
+
+    //PASSED
+    std::cout 
+              << "\nStart Day: " << s2.getAdmitDate().tm_mday << " [Expected: 20]"
+              << "\nStart Month: " << s2.getAdmitDate().tm_mon << " [Expected: 8]"
+              << "\nStart Year: " << s2.getAdmitDate().tm_year << " [Expected: 16]"
+              << "\nSchool: " << s2.getSchool() << " [Expected: 0 (AS)]"
+              << "\nGPA: " << s2.getGPA() << " [Expected: 3.06]"
+              << "\nFull Time: " << s2.isFullTime() << " [Expected: 1 (True)]"
+              << "\nUnits Completed: " << s2.getUnitsCompleted() << " [Expected: 12.5]"
+              << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "Testing the copy constructor" << std::endl;
+    std::cout << "Student s3(s2)" << std::endl;
+    Student s3(s2);
+    
+    //PASSED          
+    std::cout
+              << "\nStart Day: " << s3.getAdmitDate().tm_mday << " [Expected: 20]"
+              << "\nStart Month: " << s3.getAdmitDate().tm_mon << " [Expected: 8]"
+              << "\nStart Year: " << s3.getAdmitDate().tm_year << " [Expected: 16]"
+              << "\nSchool: " << s3.getSchool() << " [Expected: 0 (AS)]"
+              << "\nGPA " << s3.getGPA() << " [Expected: 3.06]"
+              << "\nFull Time: " << s3.isFullTime() << " [Expected: 1 (True)]"
+              << "\nUnits Completed: " << s3.getUnitsCompleted() << " [Expected: 12.5]"
+              << std::endl;
+
 }

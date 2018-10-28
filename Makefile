@@ -1,5 +1,5 @@
 EXECS = tester
-OBJS = tester.o Person.o Faculty.o
+OBJS = tester.o Person.o Faculty.o Student.o
 CC = g++
 CCFLAGS = -Wall -Wno-deprecated -Werror=return-type -g
 
