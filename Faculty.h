@@ -14,17 +14,6 @@ class Faculty : public Person
 
     protected:
         // instance variables here...
-        
-        int my_urId;
-        std::string my_netId;
-        std::string my_lastName;
-        std::string my_firstName; 
-        int my_dobDay;
-        int my_dobMonth;
-        int my_dobYear; 
-        std::string my_email;
-        std::string my_address;
-        long my_phone;
         int my_startday;
         int my_startmo;
         int my_startyr;

@@ -225,7 +225,8 @@ int main()
               << "\nFull Time: " << f3.isFullTime() << " [Expected: 1 (True)]"
               << "\nResearch Specialty: " << f3.getResearchSpecialty() << " [Expected: Architecture]"
               << std::endl;
-
+    
+    std::cout << std::endl;
     std::cout << "---------------" << std::endl;
     std::cout << "Testing Student:" << std::endl;
     std::cout << "---------------" << std::endl;

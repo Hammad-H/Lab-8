@@ -4,19 +4,10 @@
 #include "Faculty.h"
 #include <iostream>
 
-Faculty::Faculty() {}
+Faculty::Faculty():Person() {}
 
-Faculty::Faculty(const Faculty& other) {
-	my_urId = other.my_urId;
-	my_netId = other.my_netId;
-	my_lastName = other.my_lastName;
-	my_firstName = other.my_firstName;
-	my_dobDay = other.my_dobDay;
-	my_dobMonth = other.my_dobMonth;
-	my_dobYear = other.my_dobYear;
-	my_email = other.my_email;
-	my_address = other.my_address;
-	my_phone = other.my_phone;
+Faculty::Faculty(const Faculty& other):Person(other)
+{
 	my_startday = other.my_startday;
 	my_startmo = other.my_startmo;
 	my_startyr = other.my_startyr;
@@ -31,18 +22,8 @@ Faculty::Faculty(int urid, std::string netid, std::string lname, std::string fna
                std::string email, std::string address, long phone,
                int day_start, int month_start, int year_start,
                School school, Rank professor_rank, bool is_full_time,
-               std::string research_specialty) {
-	
-	my_urId = urid;
-	my_netId = netid;
-	my_lastName = lname;
-	my_firstName = fname; 
-	my_dobDay = dob_day;
-	my_dobMonth = dob_mo;
-	my_dobYear = dob_yr; 
-	my_email = email;
-	my_address = address;
-	my_phone = phone;
+               std::string research_specialty)
+{	
 	my_startday = day_start;
 	my_startmo = month_start;
 	my_startyr = year_start;
