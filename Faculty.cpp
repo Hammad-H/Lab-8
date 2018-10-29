@@ -23,6 +23,8 @@ Faculty::Faculty(int urid, std::string netid, std::string lname, std::string fna
                int day_start, int month_start, int year_start,
                School school, Rank professor_rank, bool is_full_time,
                std::string research_specialty)
+			   :Person(urid, netid, lname, fname, dob_day, dob_mo,
+               		   dob_yr, email, address, phone)
 {	
 	my_startday = day_start;
 	my_startmo = month_start;
